@@ -1,8 +1,8 @@
-const Categoria = require('../Models/categoria');
+const Categoria = require('../models/categoria');
 
 exports.createCategoria = async (req, res) => {
     try {
-        console.log(req.body);
+        console.log('req.body:', req.body);
         const { nome_categoria } = req.body;
         const categoria = new Categoria({ nome_categoria });
         await categoria.save();
@@ -23,18 +23,21 @@ exports.getCategorias = async (req, res) => {
 
 exports.updateCategoria = async (req, res) => {
     try {
-        const categorias = await Categoria.find();
-        res.json(categorias);
+        const { id } = req.params;
+        const { nome_categoria } = req.body;
+        const categoria = await Categoria.findByIdAndUpdate(id, { nome_categoria }, { new: true });
+        res.json(categoria);
     } catch (error) {
-        res.status(500).json({ error: 'Erro ao buscar categorias' });
+        res.status(500).json({ error: 'Erro ao atualizar categoria' });
     }
 };
 
 exports.deleteCategoria = async (req, res) => {
     try {
-        const categorias = await Categoria.find();
-        res.json(categorias);
+        const { id } = req.params;
+        await Categoria.findByIdAndDelete(id);
+        res.json({ message: 'Categoria deletada com sucesso' });
     } catch (error) {
-        res.status(500).json({ error: 'Erro ao buscar categorias' });
+        res.status(500).json({ error: 'Erro ao deletar categoria' });
     }
 };

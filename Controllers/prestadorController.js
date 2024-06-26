@@ -12,7 +12,7 @@ exports.createPrestador = async (req, res) => {
     }
 };
 
-exports.getPrestadores = async (res) => {
+exports.getPrestadores = async (req, res) => {
     try {
         const prestadores = await Prestador.find().populate('categoriaId');
         res.json(prestadores);
@@ -23,18 +23,25 @@ exports.getPrestadores = async (res) => {
 
 exports.updatePrestador = async (req, res) => {
     try {
-        const categorias = await Categoria.find();
-        res.json(categorias);
+        const { id } = req.params;
+        const { nome_prestador, tempo_experiencia, categoriaId } = req.body;
+        const prestador = await Prestador.findByIdAndUpdate(
+            id,
+            { nome_prestador, tempo_experiencia, categoriaId },
+            { new: true }
+        ).populate('categoriaId');
+        res.json(prestador);
     } catch (error) {
-        res.status(500).json({ error: 'Erro ao buscar categorias' });
+        res.status(500).json({ error: 'Erro ao atualizar prestador' });
     }
 };
 
 exports.deletePrestador = async (req, res) => {
     try {
-        const categorias = await Categoria.find();
-        res.json(categorias);
+        const { id } = req.params;
+        await Prestador.findByIdAndDelete(id);
+        res.json({ message: 'Prestador deletado com sucesso' });
     } catch (error) {
-        res.status(500).json({ error: 'Erro ao buscar categorias' });
+        res.status(500).json({ error: 'Erro ao deletar prestador' });
     }
 };

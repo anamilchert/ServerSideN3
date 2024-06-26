@@ -4,7 +4,7 @@ const prestadorController = require('../Controllers/prestadorController');
 
 router.post('/', prestadorController.createPrestador);
 router.get('/', prestadorController.getPrestadores);
-router.put('/', prestadorController.updatePrestador);
-router.delete('/', prestadorController.deletePrestador);
+router.put('/:id', prestadorController.updatePrestador);
+router.delete('/:id', prestadorController.deletePrestador);
 
 module.exports = router;

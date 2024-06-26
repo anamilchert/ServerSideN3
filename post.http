@@ -1,0 +1,26 @@
+POST http://localhost:3000/api/categorias HTTP/1.1
+content-type: application/json
+
+{
+    "nome_categoria": "Eletricista"
+}
+
+###
+POST http://localhost:3000/api/prestadores HTTP/1.1
+content-type: application/json
+
+{
+    "nome_prestador": "Eletricista",
+    "tempo_experiencia": "3",
+    "categoriaId": "667c7b68123b75205b50e98d"
+}
+###
+
+POST http://localhost:3000/api/servicos HTTP/1.1
+content-type: application/json
+
+{
+    "nome_servico": "Instalar uma tomada",
+    "vlr_servico": "50",
+    "prestadorId": "667c7c39a1fa4790a562cfa6"
+}

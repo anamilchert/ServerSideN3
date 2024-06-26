@@ -1,0 +1,26 @@
+PUT http://localhost:3000/api/categorias/667c7b68123b75205b50e98d HTTP/1.1
+content-type: application/json
+
+{
+    "nome_categoria": "Diarista"
+}
+
+###
+PUT http://localhost:3000/api/prestadores/667c7c39a1fa4790a562cfa6 HTTP/1.1
+content-type: application/json
+
+{
+    "nome_prestador": "Encanador",
+    "tempo_experiencia": "3",
+    "categoriaId": "667c7b68123b75205b50e98d"
+}
+###
+
+PUT http://localhost:3000/api/servicos/667c7c6296295290d826d9df HTTP/1.1
+content-type: application/json
+
+{
+    "nome_servico": "Trocar a lâmpada",
+    "vlr_servico": "150",
+    "prestadorId": "667c7c39a1fa4790a562cfa6"
+}
