@@ -4,14 +4,13 @@ const sequelize = require('./config/database');
 
 app.use(express.json());
 
-const categoriaRoutes = require('./routes/categoriaRoutes');
-const prestadorRoutes = require('./routes/prestadorRoutes');
-const servicoRoutes = require('./routes/servicoRoutes');
+const categoriaRoutes = require('./Routes/categoriaRoutes');
+const prestadorRoutes = require('./Routes/prestadorRoutes');
+const servicoRoutes = require('./Routes/servicoRoutes');
 
-
-app.use('/api', categoriaRoutes);
-app.use('/api', prestadorRoutes);
-app.use('/api', servicoRoutes);
+app.use('/api/categorias', categoriaRoutes);
+app.use('/api/prestadores', prestadorRoutes);
+app.use('/api/servicos', servicoRoutes);
 
 sequelize.sync()
     .then(() => {
