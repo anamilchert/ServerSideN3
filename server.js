@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const sequelize = require('./config/database');
+const connectDB = require('./config/database');
 
 app.use(express.json());
 
@@ -12,14 +12,7 @@ app.use('/api/categorias', categoriaRoutes);
 app.use('/api/prestadores', prestadorRoutes);
 app.use('/api/servicos', servicoRoutes);
 
-sequelize.sync()
-    .then(() => {
-        console.log('Banco de dados conectado');
-    })
-    .catch(err => {
-        console.error('não foi possível conectar ao banco:', err);
-    });
-
+connectDB();
 
 const PORT = 3000;
 app.listen(PORT, () => {
