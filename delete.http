@@ -1,5 +1,8 @@
-DELETE http://localhost:3000/api/categorias/ HTTP/1.1
+DELETE http://localhost:3000/api/categorias/667c7c6296295290d826d9df HTTP/1.1
+Authorization: x
 ###
-DELETE http://localhost:3000/api/prestadores/ HTTP/1.1
+DELETE http://localhost:3000/api/prestadores/667c7c6296295290d826d9df HTTP/1.1
+Authorization: x
 ###
 DELETE http://localhost:3000/api/servicos/667c7c6296295290d826d9df HTTP/1.1
+Authorization: x

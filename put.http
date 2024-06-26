@@ -1,4 +1,5 @@
 PUT http://localhost:3000/api/categorias/667c7b68123b75205b50e98d HTTP/1.1
+Authorization: x
 content-type: application/json
 
 {
@@ -7,6 +8,7 @@ content-type: application/json
 
 ###
 PUT http://localhost:3000/api/prestadores/667c7c39a1fa4790a562cfa6 HTTP/1.1
+Authorization: x
 content-type: application/json
 
 {
@@ -17,6 +19,7 @@ content-type: application/json
 ###
 
 PUT http://localhost:3000/api/servicos/667c7c6296295290d826d9df HTTP/1.1
+Authorization: x
 content-type: application/json
 
 {

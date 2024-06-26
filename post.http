@@ -1,12 +1,14 @@
 POST http://localhost:3000/api/categorias HTTP/1.1
+Authorization: x
 content-type: application/json
 
 {
-    "nome_categoria": "Eletricista"
+    "nome_categoria": "Instalador de coisas"
 }
 
 ###
 POST http://localhost:3000/api/prestadores HTTP/1.1
+Authorization: x
 content-type: application/json
 
 {
@@ -17,6 +19,7 @@ content-type: application/json
 ###
 
 POST http://localhost:3000/api/servicos HTTP/1.1
+Authorization: x
 content-type: application/json
 
 {

@@ -2,7 +2,6 @@ const Categoria = require('../models/categoria');
 
 exports.createCategoria = async (req, res) => {
     try {
-        console.log('req.body:', req.body);
         const { nome_categoria } = req.body;
         const categoria = new Categoria({ nome_categoria });
         await categoria.save();

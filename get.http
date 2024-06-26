@@ -1,6 +1,9 @@
 GET http://localhost:3000/api/categorias HTTP/1.1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImFuYSIsImlhdCI6MTcxOTQzNjM1OSwiZXhwIjoxNzE5NDM5OTU5fQ.k2s-FyInogSWwxQM7DOQUbHq5w9n9Y3MD2clLwK0Cro
 ###
 GET http://localhost:3000/api/prestadores HTTP/1.1
+Authorization: token
 ###
 GET http://localhost:3000/api/servicos HTTP/1.1
+Authorization: token
 ###
