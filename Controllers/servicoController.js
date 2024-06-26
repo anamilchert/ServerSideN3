@@ -35,3 +35,21 @@ exports.getServicos = async (req, res) => {
         res.status(500).json({ error: 'Erro ao buscar serviços' });
     }
 };
+
+exports.updateServico = async (req, res) => {
+    try {
+        const categorias = await Categoria.find();
+        res.json(categorias);
+    } catch (error) {
+        res.status(500).json({ error: 'Erro ao buscar categorias' });
+    }
+};
+
+exports.deleteServico = async (req, res) => {
+    try {
+        const categorias = await Categoria.find();
+        res.json(categorias);
+    } catch (error) {
+        res.status(500).json({ error: 'Erro ao buscar categorias' });
+    }
+};

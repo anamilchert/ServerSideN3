@@ -1,0 +1,11 @@
+POST http://localhost:3000/api/prestadores HTTP/1.1
+
+content-type: application/json
+
+{
+    "nome_prestador": "Eletricista",
+    "tempo_experiencia": "10",
+    "categoriaId": "1"
+}
+
+###
